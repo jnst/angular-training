@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/tz.css">
+  <title>Time Zone</title>
+</head>
+<body ng-controller="TzCtrl">
+
+  <div class="container">
+    <h2>Time Zone</h2>
+    <p>{{sample()}}</p>
+  </div>
+
+  <div class="container">
+    <hr>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>都市</th>
+          <th>タイムゾーンID</th>
+          <th>略称</th>
+          <th>完全表記</th>
+          <th>日本名</th>
+          <th>時差</th>
+          <th>現在時間</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>東京</td>
+          <td>Asia/Tokyo</td>
+          <td>JST</td>
+          <td>Japan Standard Time</td>
+          <td>日本標準時間</td>
+          <td>+0900</td>
+          <td>{{now(9)}}</td>
+        </tr>
+        <tr>
+          <td>サンフランシスコ</td>
+          <td>US/Pacific</td>
+          <td>PST</td>
+          <td>Pacific Standard Time</td>
+          <td>太平洋標準時</td>
+          <td>-0800</td>
+          <td>{{now(-8)}}</td>
+        </tr>
+        <tr>
+          <td>サンフランシスコ <span class="label label-warning">夏時間</span></td>
+          <td>US/Pacific</td>
+          <td>PDT</td>
+          <td>Pacific Daylight Time</td>
+          <td>太平洋夏時間</td>
+          <td>-0700</td>
+          <td>{{now(-7)}}</td>
+        </tr>
+        <tr>
+          <td>ロンドン</td>
+          <td>Europe/London</td>
+          <td>GMT</td>
+          <td>Greenwich Mean Time</td>
+          <td>グリニッジ標準時</td>
+          <td>+0000</td>
+          <td>{{now(0)}}</td>
+        </tr>
+        <tr>
+          <td>ロンドン <span class="label label-warning">夏時間</span></td>
+          <td>Europe/London</td>
+          <td>BST</td>
+          <td>British Summer Time</td>
+          <td>英国夏時間</td>
+          <td>+0100</td>
+          <td>{{now(1)}}</td>
+        </tr>
+        <tr>
+          <td>ホノルル</td>
+          <td>Pacific/Honolulu</td>
+          <td>HAST</td>
+          <td>Hawaii-Aleutian Standard Time</td>
+          <td>ハワイ・アリューシャン標準時</td>
+          <td>-1000</td>
+          <td>{{now(-10)}}</td>
+        </tr>
+        <tr>
+          <td>グアム</td>
+          <td>Pacific/Guam</td>
+          <td>ChST</td>
+          <td>Chamorro Standard Time</td>
+          <td>チャモロ標準時</td>
+          <td>+0100</td>
+          <td>{{now(1)}}</td>
+        </tr>
+        <tr>
+          <td>-</td>
+          <td>-</td>
+          <td>UTC</td>
+          <td>Coordinated Universal Time</td>
+          <td>協定世界時</td>
+          <td>+0000</td>
+          <td>{{now(0)}}</td>
+        </tr>
+      </tbody>
+    </table>
+    <hr>
+  </div>
+
+  <div class="container">
+    <small>日本時間（JST）を太平洋夏時間（PDT）に変換</small>
+    <div class="input-group">
+      <span class="input-group-addon">JST</span>
+      <input type="text" class="form-control" placeholder="ex) 0-23">
+      <span class="input-group-addon">PDT</span>
+      <input type="text" class="form-control" placeholder="">
+    </div>
+  </div>
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+  <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.3.1/moment-with-langs.js"></script>
+  <script src="js/tz.js"></script>
+</body>
+</html>
